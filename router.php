@@ -1,40 +1,67 @@
 <?php
-// router.php - Versão simplificada
+// router.php - Roteador principal
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestUri = strtok($requestUri, '?');
 
-// Se for API
+// ============================================
+// ARQUIVOS ESTÁTICOS (CSS, JS, imagens)
+// ============================================
+$staticExtensions = ['css', 'js', 'jpg', 'jpeg', 'png', 'gif', 'ico', 'svg'];
+$extension = pathinfo($requestUri, PATHINFO_EXTENSION);
+
+if (in_array($extension, $staticExtensions)) {
+    // Procurar em várias possíveis localizações
+    $paths = [
+        __DIR__ . '/public' . $requestUri,
+        __DIR__ . $requestUri,
+        __DIR__ . '/public/CSS/style.css',
+        __DIR__ . '/CSS/style.css'
+    ];
+    
+    foreach ($paths as $path) {
+        if (file_exists($path) && is_file($path)) {
+            $mimeTypes = [
+                'css' => 'text/css',
+                'js' => 'application/javascript',
+                'jpg' => 'image/jpeg',
+                'png' => 'image/png'
+            ];
+            header('Content-Type: ' . ($mimeTypes[$extension] ?? 'text/plain'));
+            header('Cache-Control: public, max-age=3600');
+            readfile($path);
+            exit;
+        }
+    }
+}
+
+// ============================================
+// API
+// ============================================
 if (strpos($requestUri, '/api/') === 0) {
     header('Content-Type: application/json');
+    header('Access-Control-Allow-Origin: *');
     include(__DIR__ . '/api/game_api.php');
     exit;
 }
 
-// Se for arquivo estático CSS
-if (preg_match('/\.css$/', $requestUri)) {
-    $file = __DIR__ . '/public' . $requestUri;
-    if (file_exists($file)) {
-        header('Content-Type: text/css');
-        readfile($file);
-        exit;
-    }
-}
-
-// Se for PHJSP
+// ============================================
+// PHJSP
+// ============================================
 if (strpos($requestUri, '.phjsp') !== false) {
-    $file = __DIR__ . '/public/PHJSP/' . basename($requestUri);
-    if (file_exists($file)) {
-        include($file);
-        exit;
+    $paths = [
+        __DIR__ . '/public/PHJSP/' . basename($requestUri),
+        __DIR__ . '/PHJSP/' . basename($requestUri)
+    ];
+    foreach ($paths as $path) {
+        if (file_exists($path)) {
+            include($path);
+            exit;
+        }
     }
 }
 
-// Se for healthcheck
-if ($requestUri === '/healthcheck.php') {
-    echo "OK";
-    exit;
-}
-
-// Qualquer outra coisa, mostra o index
+// ============================================
+// ROTA PRINCIPAL
+// ============================================
 include(__DIR__ . '/index.php');
 ?>
