@@ -1,0 +1,633 @@
+[
+    {
+        "id": "1776379404_69e1660c685b9",
+        "winner": "joelgomes1994",
+        "winner_name": "Joel Gomes da Silva",
+        "loser": "Rafael-Fagiani",
+        "loser_name": "Rafael-Fagiani",
+        "points_gained": 12,
+        "points_lost": 10,
+        "timestamp": 1776379404,
+        "date": "2026-04-16 22:43:24"
+    },
+    {
+        "id": "1776379398_69e1660676287",
+        "winner": "joelgomes1994",
+        "winner_name": "Joel Gomes da Silva",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776379398,
+        "date": "2026-04-16 22:43:18"
+    },
+    {
+        "id": "1776379393_69e16601e93f2",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "deyvin",
+        "loser_name": "Deyvid Nascimento",
+        "points_gained": 12,
+        "points_lost": 10,
+        "timestamp": 1776379393,
+        "date": "2026-04-16 22:43:13"
+    },
+    {
+        "id": "1776379386_69e165fa5ecee",
+        "winner": "Bernardo-Ribeiro",
+        "winner_name": "Bernardo",
+        "loser": "cristianoAbudu",
+        "loser_name": "Cristiano",
+        "points_gained": 12,
+        "points_lost": 11,
+        "timestamp": 1776379386,
+        "date": "2026-04-16 22:43:06"
+    },
+    {
+        "id": "1776379381_69e165f599411",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "lucasmontano",
+        "loser_name": "Lucas Montano",
+        "points_gained": 12,
+        "points_lost": 10,
+        "timestamp": 1776379381,
+        "date": "2026-04-16 22:43:01"
+    },
+    {
+        "id": "1776379376_69e165f00ac8a",
+        "winner": "lucasmontano",
+        "winner_name": "Lucas Montano",
+        "loser": "cristianoAbudu",
+        "loser_name": "Cristiano",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776379376,
+        "date": "2026-04-16 22:42:56"
+    },
+    {
+        "id": "1776379372_69e165ec06be0",
+        "winner": "deyvin",
+        "winner_name": "Deyvid Nascimento",
+        "loser": "filipedeschamps",
+        "loser_name": "Filipe Deschamps",
+        "points_gained": 10,
+        "points_lost": 10,
+        "timestamp": 1776379372,
+        "date": "2026-04-16 22:42:52"
+    },
+    {
+        "id": "1776379235_69e165634f25d",
+        "winner": "joelgomes1994",
+        "winner_name": "Joel Gomes da Silva",
+        "loser": "deyvin",
+        "loser_name": "Deyvid Nascimento",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776379235,
+        "date": "2026-04-16 22:40:35"
+    },
+    {
+        "id": "1776378879_69e163ffd9bb8",
+        "winner": "Bernardo-Ribeiro",
+        "winner_name": "Bernardo",
+        "loser": "akitaonrails",
+        "loser_name": "Fabio Akita",
+        "points_gained": 12,
+        "points_lost": 11,
+        "timestamp": 1776378879,
+        "date": "2026-04-16 22:34:39"
+    },
+    {
+        "id": "1776378869_69e163f5e9e07",
+        "winner": "Bernardo-Ribeiro",
+        "winner_name": "Bernardo",
+        "loser": "akitaonrails",
+        "loser_name": "Fabio Akita",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776378869,
+        "date": "2026-04-16 22:34:29"
+    },
+    {
+        "id": "1776374778_69e153fa4ca72",
+        "winner": "Bernardo-Ribeiro",
+        "winner_name": "Bernardo",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 11,
+        "points_lost": 9,
+        "timestamp": 1776374778,
+        "date": "2026-04-16 21:26:18"
+    },
+    {
+        "id": "1776374386_69e15272b6377",
+        "winner": "UnidayStudio",
+        "winner_name": "Uniday Studio",
+        "loser": "nathancmiguel",
+        "loser_name": "Cesio",
+        "points_gained": 11,
+        "points_lost": 9,
+        "timestamp": 1776374386,
+        "date": "2026-04-16 21:19:46"
+    },
+    {
+        "id": "1776374384_69e152704e819",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776374384,
+        "date": "2026-04-16 21:19:44"
+    },
+    {
+        "id": "1776374384_69e152704aeb3",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 11,
+        "points_lost": 9,
+        "timestamp": 1776374384,
+        "date": "2026-04-16 21:19:44"
+    },
+    {
+        "id": "1776374383_69e1526f391f2",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 10,
+        "points_lost": 9,
+        "timestamp": 1776374383,
+        "date": "2026-04-16 21:19:43"
+    },
+    {
+        "id": "1776374382_69e1526e83962",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 10,
+        "points_lost": 9,
+        "timestamp": 1776374382,
+        "date": "2026-04-16 21:19:42"
+    },
+    {
+        "id": "1776374381_69e1526d5e46b",
+        "winner": "UnidayStudio",
+        "winner_name": "Uniday Studio",
+        "loser": "nathancmiguel",
+        "loser_name": "Cesio",
+        "points_gained": 12,
+        "points_lost": 11,
+        "timestamp": 1776374381,
+        "date": "2026-04-16 21:19:41"
+    },
+    {
+        "id": "1776374379_69e1526bb064f",
+        "winner": "UnidayStudio",
+        "winner_name": "Uniday Studio",
+        "loser": "nathancmiguel",
+        "loser_name": "Cesio",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776374379,
+        "date": "2026-04-16 21:19:39"
+    },
+    {
+        "id": "1776374377_69e15269a87c2",
+        "winner": "UnidayStudio",
+        "winner_name": "Uniday Studio",
+        "loser": "nathancmiguel",
+        "loser_name": "Cesio",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776374377,
+        "date": "2026-04-16 21:19:37"
+    },
+    {
+        "id": "1776374375_69e15267c3f16",
+        "winner": "UnidayStudio",
+        "winner_name": "Uniday Studio",
+        "loser": "nathancmiguel",
+        "loser_name": "Cesio",
+        "points_gained": 10,
+        "points_lost": 10,
+        "timestamp": 1776374375,
+        "date": "2026-04-16 21:19:35"
+    },
+    {
+        "id": "1776374371_69e1526339e42",
+        "winner": "nathancmiguel",
+        "winner_name": "Cesio",
+        "loser": "UnidayStudio",
+        "loser_name": "Uniday Studio",
+        "points_gained": 11,
+        "points_lost": 10,
+        "timestamp": 1776374371,
+        "date": "2026-04-16 21:19:31"
+    },
+    {
+        "id": "1776358485_69e114550dc49",
+        "winner": "filipedeschamps",
+        "loser": "lucasmontano",
+        "points": 10,
+        "timestamp": 1776358485,
+        "date": "2026-04-16 16:54:45"
+    },
+    {
+        "id": "1776358482_69e11452aa05f",
+        "winner": "maxcoalastudio",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358482,
+        "date": "2026-04-16 16:54:42"
+    },
+    {
+        "id": "1776358479_69e1144fd739f",
+        "winner": "joelgomes1994",
+        "loser": "cristianoAbudu",
+        "points": 10,
+        "timestamp": 1776358479,
+        "date": "2026-04-16 16:54:39"
+    },
+    {
+        "id": "1776358479_69e1144fd10f8",
+        "winner": "joelgomes1994",
+        "loser": "cristianoAbudu",
+        "points": 10,
+        "timestamp": 1776358479,
+        "date": "2026-04-16 16:54:39"
+    },
+    {
+        "id": "1776358476_69e1144c6d6ab",
+        "winner": "filipedeschamps",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358476,
+        "date": "2026-04-16 16:54:36"
+    },
+    {
+        "id": "1776358472_69e11448a230a",
+        "winner": "maxcoalastudio",
+        "loser": "deyvin",
+        "points": 10,
+        "timestamp": 1776358472,
+        "date": "2026-04-16 16:54:32"
+    },
+    {
+        "id": "1776358465_69e1144184e2c",
+        "winner": "Cesio137",
+        "loser": "lucasmontano",
+        "points": 10,
+        "timestamp": 1776358465,
+        "date": "2026-04-16 16:54:25"
+    },
+    {
+        "id": "1776358462_69e1143ed35e0",
+        "winner": "deyvin",
+        "loser": "joelgomes1994",
+        "points": 10,
+        "timestamp": 1776358462,
+        "date": "2026-04-16 16:54:22"
+    },
+    {
+        "id": "1776358441_69e114296409f",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358441,
+        "date": "2026-04-16 16:54:01"
+    },
+    {
+        "id": "1776358438_69e11426e6995",
+        "winner": "Cesio137",
+        "loser": "maxcoalastudio",
+        "points": 10,
+        "timestamp": 1776358438,
+        "date": "2026-04-16 16:53:58"
+    },
+    {
+        "id": "1776358435_69e11423cd5fe",
+        "winner": "Cesio137",
+        "loser": "filipedeschamps",
+        "points": 10,
+        "timestamp": 1776358435,
+        "date": "2026-04-16 16:53:55"
+    },
+    {
+        "id": "1776358432_69e114205de81",
+        "winner": "joelgomes1994",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358432,
+        "date": "2026-04-16 16:53:52"
+    },
+    {
+        "id": "1776358428_69e1141c48765",
+        "winner": "joelgomes1994",
+        "loser": "akitaonrails",
+        "points": 10,
+        "timestamp": 1776358428,
+        "date": "2026-04-16 16:53:48"
+    },
+    {
+        "id": "1776358425_69e1141961d6e",
+        "winner": "Cesio137",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358425,
+        "date": "2026-04-16 16:53:45"
+    },
+    {
+        "id": "1776358422_69e11416e2ad0",
+        "winner": "Cesio137",
+        "loser": "filipedeschamps",
+        "points": 10,
+        "timestamp": 1776358422,
+        "date": "2026-04-16 16:53:42"
+    },
+    {
+        "id": "1776358420_69e11414777ad",
+        "winner": "joelgomes1994",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358420,
+        "date": "2026-04-16 16:53:40"
+    },
+    {
+        "id": "1776358418_69e1141221823",
+        "winner": "akitaonrails",
+        "loser": "cristianoAbudu",
+        "points": 10,
+        "timestamp": 1776358418,
+        "date": "2026-04-16 16:53:38"
+    },
+    {
+        "id": "1776358410_69e1140a71649",
+        "winner": "deyvin",
+        "loser": "Bernardo-Ribeiro",
+        "points": 10,
+        "timestamp": 1776358410,
+        "date": "2026-04-16 16:53:30"
+    },
+    {
+        "id": "1776358406_69e114060435d",
+        "winner": "akitaonrails",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358406,
+        "date": "2026-04-16 16:53:26"
+    },
+    {
+        "id": "1776358405_69e11405f05b3",
+        "winner": "akitaonrails",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358405,
+        "date": "2026-04-16 16:53:25"
+    },
+    {
+        "id": "1776358403_69e1140383392",
+        "winner": "maxcoalastudio",
+        "loser": "akitaonrails",
+        "points": 10,
+        "timestamp": 1776358403,
+        "date": "2026-04-16 16:53:23"
+    },
+    {
+        "id": "1776358400_69e11400d3026",
+        "winner": "maxcoalastudio",
+        "loser": "deyvin",
+        "points": 10,
+        "timestamp": 1776358400,
+        "date": "2026-04-16 16:53:20"
+    },
+    {
+        "id": "1776358397_69e113fd69a4d",
+        "winner": "filipedeschamps",
+        "loser": "Rafael-Fagiani",
+        "points": 10,
+        "timestamp": 1776358397,
+        "date": "2026-04-16 16:53:17"
+    },
+    {
+        "id": "1776358394_69e113fa2153e",
+        "winner": "Cesio137",
+        "loser": "lucasmontano",
+        "points": 10,
+        "timestamp": 1776358394,
+        "date": "2026-04-16 16:53:14"
+    },
+    {
+        "id": "1776358391_69e113f7698aa",
+        "winner": "filipedeschamps",
+        "loser": "joelgomes1994",
+        "points": 10,
+        "timestamp": 1776358391,
+        "date": "2026-04-16 16:53:11"
+    },
+    {
+        "id": "1776358388_69e113f429240",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358388,
+        "date": "2026-04-16 16:53:08"
+    },
+    {
+        "id": "1776358385_69e113f181027",
+        "winner": "maxcoalastudio",
+        "loser": "Bernardo-Ribeiro",
+        "points": 10,
+        "timestamp": 1776358385,
+        "date": "2026-04-16 16:53:05"
+    },
+    {
+        "id": "1776358382_69e113ee4c4f1",
+        "winner": "filipedeschamps",
+        "loser": "deyvin",
+        "points": 10,
+        "timestamp": 1776358382,
+        "date": "2026-04-16 16:53:02"
+    },
+    {
+        "id": "1776358377_69e113e92909a",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358377,
+        "date": "2026-04-16 16:52:57"
+    },
+    {
+        "id": "1776358377_69e113e9252db",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358377,
+        "date": "2026-04-16 16:52:57"
+    },
+    {
+        "id": "1776358373_69e113e596878",
+        "winner": "deyvin",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358373,
+        "date": "2026-04-16 16:52:53"
+    },
+    {
+        "id": "1776358371_69e113e33ac28",
+        "winner": "maxcoalastudio",
+        "loser": "lucasmontano",
+        "points": 10,
+        "timestamp": 1776358371,
+        "date": "2026-04-16 16:52:51"
+    },
+    {
+        "id": "1776358368_69e113e0dce3c",
+        "winner": "joelgomes1994",
+        "loser": "Rafael-Fagiani",
+        "points": 10,
+        "timestamp": 1776358368,
+        "date": "2026-04-16 16:52:48"
+    },
+    {
+        "id": "1776358366_69e113de62076",
+        "winner": "lucasmontano",
+        "loser": "cristianoAbudu",
+        "points": 10,
+        "timestamp": 1776358366,
+        "date": "2026-04-16 16:52:46"
+    },
+    {
+        "id": "1776358364_69e113dc08152",
+        "winner": "cristianoAbudu",
+        "loser": "Rafael-Fagiani",
+        "points": 10,
+        "timestamp": 1776358364,
+        "date": "2026-04-16 16:52:44"
+    },
+    {
+        "id": "1776358360_69e113d898665",
+        "winner": "joelgomes1994",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358360,
+        "date": "2026-04-16 16:52:40"
+    },
+    {
+        "id": "1776358357_69e113d5e88a2",
+        "winner": "maxcoalastudio",
+        "loser": "filipedeschamps",
+        "points": 10,
+        "timestamp": 1776358357,
+        "date": "2026-04-16 16:52:37"
+    },
+    {
+        "id": "1776358351_69e113cf313bb",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "akitaonrails",
+        "points": 10,
+        "timestamp": 1776358351,
+        "date": "2026-04-16 16:52:31"
+    },
+    {
+        "id": "1776358348_69e113ccd1297",
+        "winner": "joelgomes1994",
+        "loser": "Bernardo-Ribeiro",
+        "points": 10,
+        "timestamp": 1776358348,
+        "date": "2026-04-16 16:52:28"
+    },
+    {
+        "id": "1776358346_69e113ca5fc99",
+        "winner": "joelgomes1994",
+        "loser": "Rafael-Fagiani",
+        "points": 10,
+        "timestamp": 1776358346,
+        "date": "2026-04-16 16:52:26"
+    },
+    {
+        "id": "1776358343_69e113c7040b0",
+        "winner": "Cesio137",
+        "loser": "Rafael-Fagiani",
+        "points": 10,
+        "timestamp": 1776358343,
+        "date": "2026-04-16 16:52:23"
+    },
+    {
+        "id": "1776358338_69e113c21b913",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358338,
+        "date": "2026-04-16 16:52:18"
+    },
+    {
+        "id": "1776358336_69e113c00fe91",
+        "winner": "deyvin",
+        "loser": "Rafael-Fagiani",
+        "points": 10,
+        "timestamp": 1776358336,
+        "date": "2026-04-16 16:52:16"
+    },
+    {
+        "id": "1776358333_69e113bdc5670",
+        "winner": "filipedeschamps",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358333,
+        "date": "2026-04-16 16:52:13"
+    },
+    {
+        "id": "1776358331_69e113bb7d33f",
+        "winner": "maxcoalastudio",
+        "loser": "UnidayStudio",
+        "points": 10,
+        "timestamp": 1776358331,
+        "date": "2026-04-16 16:52:11"
+    },
+    {
+        "id": "1776358329_69e113b90412e",
+        "winner": "maxcoalastudio",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358329,
+        "date": "2026-04-16 16:52:09"
+    },
+    {
+        "id": "1776358326_69e113b6b9f81",
+        "winner": "Bernardo-Ribeiro",
+        "loser": "Cesio137",
+        "points": 10,
+        "timestamp": 1776358326,
+        "date": "2026-04-16 16:52:06"
+    },
+    {
+        "id": "1776358323_69e113b3a8299",
+        "winner": "joelgomes1994",
+        "loser": "filipedeschamps",
+        "points": 10,
+        "timestamp": 1776358323,
+        "date": "2026-04-16 16:52:03"
+    },
+    {
+        "id": "1776358319_69e113af5bed2",
+        "winner": "lucasmontano",
+        "loser": "akitaonrails",
+        "points": 10,
+        "timestamp": 1776358319,
+        "date": "2026-04-16 16:51:59"
+    },
+    {
+        "id": "1776358317_69e113ad008a5",
+        "winner": "filipedeschamps",
+        "loser": "Bernardo-Ribeiro",
+        "points": 10,
+        "timestamp": 1776358317,
+        "date": "2026-04-16 16:51:57"
+    }
+]
