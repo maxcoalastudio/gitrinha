@@ -1,0 +1,1194 @@
+/*Maxwell-Araujo-Santos*/
+/* style.css - Versão com scroll e animações Hearthstone */
+
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a1a2e 50%, #16213e 100%);
+    font-family: 'Cinema', 'Arial', 'Helvetica', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de fumaça no fundo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#titulo {
+    text-align: center;
+    color: #ffd700;
+    font-size: 50px;
+    margin: 20px 0;
+    text-shadow: 
+        0 0 10px #ffd700,
+        0 0 20px #ff8c00,
+        0 0 30px #ff6b00,
+        2px 2px 4px rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(10,15,30,0.95), rgba(26,26,46,0.95));
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 1000;
+    letter-spacing: 4px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00; }
+    to { text-shadow: 0 0 20px #ffd700, 0 0 40px #ff8c00, 0 0 60px #ff6b00; }
+}
+
+/* Container principal */
+.main-container {
+    margin-top: 140px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================ */
+/* CARDS DE BATALHA - ESTILO HEARTHSTONE */
+/* ============================================ */
+.card {
+    width: 400px;
+    height: auto;
+    min-height: 580px;
+    margin: 20px;
+    padding: 15px;
+    border: 3px solid #ffd700;
+    border-radius: 16px;
+    text-align: center;
+    font-family: 'Cinema', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2a2a3e 0%, #1a1a2e 100%);
+    color: #fff;
+    
+    /* Animações Hearthstone */
+    transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+    animation: cardAppear 0.6s ease-out;
+}
+
+/* Animação de aparecimento do card */
+@keyframes cardAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Efeito hover estilo Hearthstone */
+.card:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.6),
+        0 0 20px rgba(255,215,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+    border-color: #ffed4e;
+}
+
+/* Efeito de brilho dourado ao passar o mouse */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent);
+    transition: left 0.6s ease;
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+/* Efeito de borda dourada pulsante */
+.card::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 18px;
+    background: linear-gradient(45deg, #ffd700, #ff8c00, #ffd700);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.card:hover::after {
+    opacity: 0.5;
+    animation: borderPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+/* Imagem do card */
+.card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd700;
+    transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 0 15px rgba(255,215,0,0.5);
+}
+
+/* Título do card */
+.card h2 {
+    font-size: 24px;
+    margin: 12px 0;
+    background: linear-gradient(135deg, #ffd700, #ff8c00, #ffd700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.card:hover h2 {
+    transform: scale(1.05);
+    letter-spacing: 1px;
+}
+
+/* Bio do card */
+.card h3 {
+    font-size: 13px;
+    color: #aaa;
+    margin: 10px 0;
+    height: 40px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-style: italic;
+}
+
+.card:hover h3 {
+    color: #ddd;
+}
+
+/* Textos do card */
+.card p {
+    font-size: 13px;
+    color: #bbb;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.card:hover p {
+    color: #eee;
+}
+
+/* Botão do card - Estilo Hearthstone */
+.card button {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    color: #1a1a2e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.4s ease;
+}
+
+.card button:hover::before {
+    left: 100%;
+}
+
+.card:hover button {
+    background: linear-gradient(135deg, #ffed4e, #ffaa00);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,215,0,0.4);
+    color: #000;
+}
+
+.card button:active {
+    transform: translateY(0px);
+}
+
+/* ============================================ */
+/* RANKING PANEL - COM SCROLL ESTILO HEARTHSTONE */
+/* ============================================ */
+.ranking-panel {
+    position: fixed;
+    right: 20px;
+    top: 150px;
+    width: 320px;
+    background: linear-gradient(135deg, rgba(30,30,50,0.95), rgba(20,20,40,0.95));
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,215,0,0.3);
+    z-index: 100;
+    
+    /* SCROLL */
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+/* Scroll customizado */
+.ranking-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ranking-panel::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.ranking-panel::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border-radius: 10px;
+}
+
+.ranking-panel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffed4e, #ffaa00);
+}
+
+.ranking-panel h3 {
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: #ffd700;
+    font-size: 20px;
+    text-shadow: 0 0 5px rgba(255,215,0,0.5);
+}
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Item do ranking */
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+.ranking-item:hover {
+    transform: translateX(-8px) scale(1.02);
+    background: rgba(255,215,0,0.2);
+    border-color: #ffd700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Medalha */
+.rank-medal {
+    font-size: 28px;
+    min-width: 45px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.ranking-item:hover .rank-medal {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* Avatar do ranking */
+.rank-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd700;
+    transition: all 0.3s ease;
+}
+
+.ranking-item:hover .rank-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+/* Informações do ranking */
+.rank-info {
+    flex: 1;
+}
+
+.rank-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.ranking-item:hover .rank-name {
+    color: #ffd700;
+    transform: translateX(3px);
+    display: inline-block;
+}
+
+.rank-stats {
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+/* Primeiro lugar especial */
+.ranking-item.first-place {
+    background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(255,140,0,0.2));
+    border: 1px solid #ffd700;
+}
+
+.ranking-item.first-place:hover {
+    background: linear-gradient(135deg, rgba(255,215,0,0.5), rgba(255,140,0,0.3));
+}
+
+/* ============================================ */
+/* CONCORRENTES PANEL - COM SCROLL */
+/* ============================================ */
+.concorrentes-panel {
+    position: fixed;
+    right: 20px;
+    top: calc(150px + 52vh + 15px);
+    width: 320px;
+    background: linear-gradient(135deg, rgba(30,30,50,0.95), rgba(20,20,40,0.95));
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,215,0,0.3);
+    z-index: 100;
+    
+    /* SCROLL */
+    max-height: 35vh;
+    overflow-y: auto;
+}
+
+/* Scroll customizado */
+.concorrentes-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.concorrentes-panel::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.concorrentes-panel::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border-radius: 10px;
+}
+
+.concorrentes-panel h3 {
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: #ffd700;
+    font-size: 18px;
+}
+
+.concorrentes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Item concorrente */
+.concorrente-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255,215,0,0.1);
+}
+
+.concorrente-item:hover {
+    transform: translateX(-5px) scale(1.02);
+    background: rgba(255,215,0,0.15);
+    border-color: #ffd700;
+}
+
+.concorrente-position {
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 35px;
+    color: #ffd700;
+}
+
+.concorrente-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #ffd700;
+    transition: all 0.3s ease;
+}
+
+.concorrente-item:hover .concorrente-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255,215,0,0.5);
+}
+
+.concorrente-info {
+    flex: 1;
+}
+
+.concorrente-name {
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.concorrente-item:hover .concorrente-name {
+    color: #ffd700;
+}
+
+.concorrente-stats {
+    display: flex;
+    gap: 8px;
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+/* ============================================ */
+/* BATTLE AREA */
+/* ============================================ */
+.battle-area {
+    margin-left: 50px;
+    margin-right: 360px;
+    text-align: center;
+}
+
+.battle-area h2 {
+    color: #ffd700;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+    letter-spacing: 2px;
+    animation: battleTextPulse 2s ease-in-out infinite;
+}
+
+@keyframes battleTextPulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+    50% { text-shadow: 0 0 20px rgba(255,215,0,0.8), 0 0 30px rgba(255,140,0,0.5); }
+}
+
+.battle-cards {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.battle-card-container {
+    flex: 0 1 auto;
+    width: 400px;
+}
+
+/* ============================================ */
+/* BATTLE STATS */
+/* ============================================ */
+.battle-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.stat {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover .stat {
+    transform: translateY(-3px);
+}
+
+.stat-label {
+    display: block;
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffd700;
+    transition: all 0.3s ease;
+}
+
+.card:hover .stat-value {
+    color: #ffed4e;
+    text-shadow: 0 0 5px rgba(255,215,0,0.5);
+}
+
+.github-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ============================================ */
+/* ADD USER SECTION */
+/* ============================================ */
+.add-user-section {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    background: linear-gradient(135deg, rgba(30,30,50,0.95), rgba(20,20,40,0.95));
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 260px;
+    z-index: 100;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+
+.add-user-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #ffd700;
+}
+
+.add-user-section input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.add-user-section input:focus {
+    outline: none;
+    border-color: #ffed4e;
+    box-shadow: 0 0 5px rgba(255,215,0,0.5);
+}
+
+.add-user-section button {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    color: #1a1a2e;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-user-section button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* ============================================ */
+/* MESSAGES - Estilo Hearthstone */
+/* ============================================ */
+.message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1000;
+    animation: messageAppear 0.4s ease-out, messageDisappear 0.4s ease-in 3.6s forwards;
+    font-family: 'Cinema', 'Arial', sans-serif;
+    letter-spacing: 1px;
+}
+
+@keyframes messageAppear {
+    from {
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes messageDisappear {
+    to {
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+    }
+}
+
+.message.success { 
+    background: linear-gradient(135deg, #2a6b2a, #1a4a1a);
+    border-left: 4px solid #ffd700;
+}
+.message.error { 
+    background: linear-gradient(135deg, #8b1a1a, #5a0a0a);
+    border-left: 4px solid #ff4444;
+}
+.message.info { 
+    background: linear-gradient(135deg, #1a4a6b, #0a2a4a);
+    border-left: 4px solid #44aaff;
+}
+
+/* ============================================ */
+/* WAITING MESSAGE */
+/* ============================================ */
+.waiting-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+}
+
+.waiting-card {
+    background: linear-gradient(135deg, rgba(30,30,50,0.98), rgba(20,20,40,0.98));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.2);
+    border: 1px solid #ffd700;
+    min-width: 400px;
+    animation: waitingPulse 2s ease-in-out infinite;
+}
+
+@keyframes waitingPulse {
+    0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.2); }
+    50% { box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 40px rgba(255,215,0,0.5); }
+}
+
+.waiting-card h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+.waiting-card p {
+    color: #ddd;
+}
+
+.waiting-progress {
+    margin-top: 20px;
+    height: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+    transition: width 0.5s ease;
+    border-radius: 5px;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE */
+/* ============================================ */
+@media (max-width: 768px) {
+    .ranking-panel,
+    .concorrentes-panel,
+    .add-user-section {
+        position: static;
+        width: 90%;
+        margin: 10px auto;
+    }
+    
+    .battle-area {
+        margin: 0;
+        padding: 10px;
+    }
+    
+    #titulo {
+        font-size: 40px;
+        position: static;
+    }
+    
+    .main-container {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    
+    .battle-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+    
+    .waiting-card {
+        min-width: 280px;
+        padding: 20px;
+    }
+    
+    .ranking-panel, .concorrentes-panel {
+        max-height: 40vh;
+    }
+}
+
+/* Animações adicionais estilo Hearthstone */
+@keyframes cardShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+.card:active {
+    animation: cardShake 0.2s ease;
+}
+
+/* Efeito de invocação ao carregar a página */
+@keyframes summonEffect {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+        filter: blur(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+        filter: blur(0);
+    }
+}
+
+.battle-card-container {
+    animation: summonEffect 0.8s ease-out;
+}
+
+/* ============================================ */
+/* FOOTER - ESTILO PROFISSIONAL */
+/* ============================================ */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(10,15,30,0.98), rgba(26,26,46,0.98));
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,215,0,0.3);
+    padding: 15px 30px;
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.footer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Seção do criador */
+.footer-creator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.creator-name {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.creator-name::before {
+    content: '⚔️';
+    font-size: 14px;
+}
+
+.creator-email {
+    color: #aaa;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.creator-email::before {
+    content: '📧';
+    font-size: 12px;
+}
+
+.creator-email:hover {
+    color: #ffd700;
+    transform: translateX(3px);
+}
+
+/* Seção do PIX */
+.footer-pix {
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,140,0,0.05));
+    border-radius: 12px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255,215,0,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.footer-pix:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,140,0,0.1));
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255,215,0,0.2);
+}
+
+.pix-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pix-label::before {
+    content: '💎';
+    font-size: 16px;
+}
+
+.pix-key {
+    font-size: 11px;
+    color: #aaa;
+    font-family: monospace;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    display: none;
+}
+
+.footer-pix:hover .pix-key {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Seção de redes sociais */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 25px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+.social-link:hover {
+    background: rgba(255,215,0,0.15);
+    color: #ffd700;
+    transform: translateY(-3px);
+    border-color: #ffd700;
+}
+
+.social-link.orby::before {
+    content: '🌐';
+    font-size: 14px;
+}
+
+.social-link.github::before {
+    content: '🐙';
+    font-size: 14px;
+}
+
+/* Botão apoiador */
+.support-btn {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: #1a1a2e;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.support-btn::before {
+    content: '❤️';
+    font-size: 14px;
+}
+
+.support-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* Modal do PIX */
+.pix-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.pix-modal-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    border: 2px solid #ffd700;
+    position: relative;
+    animation: modalSlideIn 0.4s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.pix-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffd700;
+    transition: all 0.3s ease;
+}
+
+.pix-modal-close:hover {
+    transform: scale(1.2);
+    color: #ffed4e;
+}
+
+.pix-modal h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.pix-modal p {
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.pix-qr {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.pix-qr-placeholder {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a2e;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.pix-code {
+    background: rgba(0,0,0,0.3);
+    padding: 12px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #ffd700;
+    word-break: break-all;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pix-code:hover {
+    background: rgba(255,215,0,0.1);
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #1a1a2e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para o body não sobrepor o footer */
+body {
+    padding-bottom: 80px;
+}
+
+/* Responsividade do footer */
+@media (max-width: 768px) {
+    .footer {
+        position: relative;
+        margin-top: 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-creator {
+        justify-content: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    body {
+        padding-bottom: 20px;
+    }
+}
+"/* Forced update */" 

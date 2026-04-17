@@ -1,0 +1,13 @@
+# render.yaml
+services:
+  - type: web
+    name: gitrinha
+    runtime: image
+    repo: https://github.com/maxcoalastudio/gitrinha
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: RENDER
+        value: true
