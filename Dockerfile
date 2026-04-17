@@ -1,8 +1,5 @@
 FROM php:8.2-apache
 
-# Instalar extensões necessárias
-RUN docker-php-ext-install json
-
 # Habilitar mod_rewrite
 RUN a2enmod rewrite
 
@@ -15,10 +12,15 @@ COPY . /var/www/html/
 # Criar pasta data com permissões
 RUN mkdir -p /var/www/html/data && chmod 777 /var/www/html/data
 
+# Criar arquivos JSON iniciais
+RUN echo '[]' > /var/www/html/data/users.json && \
+    echo '[]' > /var/www/html/data/battles.json && \
+    echo '{}' > /var/www/html/data/scores.json
+
 # Configurar Apache para usar router.php
 RUN echo '<?php include "router.php"; ?>' > /var/www/html/index.php
 
-# Configurar .htaccess
+# Configurar .htaccess para rotas amigáveis
 RUN echo 'RewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^ index.php [QSA,L]' > /var/www/html/.htaccess
 
 # Expor porta 80
