@@ -4,7 +4,8 @@
   },
   "deploy": {
     "startCommand": "php -S 0.0.0.0:$PORT router.php",
-    "healthcheckPath": "/",
-    "restartPolicyType": "ON_FAILURE"
+    "healthcheckPath": "/healthcheck.php",
+    "restartPolicyType": "ON_FAILURE",
+    "numReplicas": 1
   }
 }
