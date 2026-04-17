@@ -7,7 +7,7 @@ require_once('public/PHJSP/PARSE.phjsp');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitRinha - Batalha de Devs</title>
-    <link href="public/CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="/CSS/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="body">
     <h1 id="titulo">⚔️ GitRinha ⚔️</h1>
