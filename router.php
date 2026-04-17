@@ -4,34 +4,47 @@ $requestUri = $_SERVER['REQUEST_URI'];
 $requestUri = strtok($requestUri, '?');
 
 // ============================================
-// ARQUIVOS ESTÁTICOS (CSS, JS, imagens)
+// SERVIDOR DE ARQUIVOS ESTÁTICOS
 // ============================================
-$staticExtensions = ['css', 'js', 'jpg', 'jpeg', 'png', 'gif', 'ico', 'svg'];
+
+// Mapeamento de extensões para MIME types
+$mimeTypes = [
+    'css' => 'text/css',
+    'js' => 'application/javascript',
+    'jpg' => 'image/jpeg',
+    'jpeg' => 'image/jpeg',
+    'png' => 'image/png',
+    'gif' => 'image/gif',
+    'ico' => 'image/x-icon',
+    'svg' => 'image/svg+xml'
+];
+
 $extension = pathinfo($requestUri, PATHINFO_EXTENSION);
 
-if (in_array($extension, $staticExtensions)) {
-    // Procurar em várias possíveis localizações
-    $paths = [
-        __DIR__ . '/public' . $requestUri,
-        __DIR__ . $requestUri,
-        __DIR__ . '/public/CSS/style.css',
-        __DIR__ . '/CSS/style.css'
+// Se for um arquivo estático
+if (isset($mimeTypes[$extension])) {
+    // Possíveis caminhos onde o arquivo pode estar
+    $possiblePaths = [
+        __DIR__ . $requestUri,                           // /style.css
+        __DIR__ . '/public' . $requestUri,               // /public/style.css
+        __DIR__ . '/public/CSS' . $requestUri,           // /public/CSS/style.css
+        __DIR__ . '/CSS' . $requestUri,                  // /CSS/style.css
+        __DIR__ . '/public/css' . $requestUri,           // /public/css/style.css (minúsculo)
+        __DIR__ . '/css' . $requestUri                   // /css/style.css
     ];
     
-    foreach ($paths as $path) {
+    // Procurar o arquivo
+    foreach ($possiblePaths as $path) {
         if (file_exists($path) && is_file($path)) {
-            $mimeTypes = [
-                'css' => 'text/css',
-                'js' => 'application/javascript',
-                'jpg' => 'image/jpeg',
-                'png' => 'image/png'
-            ];
-            header('Content-Type: ' . ($mimeTypes[$extension] ?? 'text/plain'));
+            header('Content-Type: ' . $mimeTypes[$extension]);
             header('Cache-Control: public, max-age=3600');
             readfile($path);
             exit;
         }
     }
+    
+    // Se não encontrou, log e continua
+    error_log("Arquivo não encontrado: " . $requestUri);
 }
 
 // ============================================
@@ -40,7 +53,13 @@ if (in_array($extension, $staticExtensions)) {
 if (strpos($requestUri, '/api/') === 0) {
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
-    include(__DIR__ . '/api/game_api.php');
+    
+    $apiFile = __DIR__ . '/api/game_api.php';
+    if (file_exists($apiFile)) {
+        include($apiFile);
+    } else {
+        echo json_encode(['success' => false, 'error' => 'API not found']);
+    }
     exit;
 }
 
@@ -48,11 +67,12 @@ if (strpos($requestUri, '/api/') === 0) {
 // PHJSP
 // ============================================
 if (strpos($requestUri, '.phjsp') !== false) {
-    $paths = [
+    $possiblePaths = [
         __DIR__ . '/public/PHJSP/' . basename($requestUri),
         __DIR__ . '/PHJSP/' . basename($requestUri)
     ];
-    foreach ($paths as $path) {
+    
+    foreach ($possiblePaths as $path) {
         if (file_exists($path)) {
             include($path);
             exit;

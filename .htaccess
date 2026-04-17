@@ -1,5 +1,11 @@
 # .htaccess
 RewriteEngine On
+
+# Servir arquivos estáticos diretamente
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ $1 [L]
+
+# Redirecionar tudo para router.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ router.php [QSA,L]
