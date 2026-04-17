@@ -1,0 +1,10 @@
+.git/
+.gitignore
+README.md
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+data/*.json
+!data/.gitkeep
+*.log
