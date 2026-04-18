@@ -6,10 +6,10 @@
         "losses": 12
     },
     "Cesio137": {
-        "score": 732.9970929783951,
-        "popularity": 1.1,
+        "score": 713.9970929783951,
+        "popularity": 1.04,
         "wins": 2,
-        "losses": 0
+        "losses": 2
     },
     "maxcoalastudio": {
         "score": 758,
@@ -30,9 +30,9 @@
         "losses": 3
     },
     "filipedeschamps": {
-        "score": 40408,
-        "popularity": 0.76,
-        "wins": 0,
+        "score": 40416,
+        "popularity": 0.81,
+        "wins": 1,
         "losses": 8
     },
     "akitaonrails": {
@@ -42,22 +42,22 @@
         "losses": 6
     },
     "deyvin": {
-        "score": 2401,
-        "popularity": 0.98,
-        "wins": 2,
+        "score": 2411,
+        "popularity": 1.03,
+        "wins": 3,
         "losses": 4
     },
     "cristianoAbudu": {
-        "score": 1888,
-        "popularity": 0.85,
+        "score": 1876,
+        "popularity": 0.82,
         "wins": 0,
-        "losses": 5
+        "losses": 6
     },
     "Rafael-Fagiani": {
-        "score": 612,
-        "popularity": 1.04,
-        "wins": 2,
-        "losses": 2
+        "score": 625,
+        "popularity": 1.11,
+        "wins": 4,
+        "losses": 3
     },
     "Bernardo-Ribeiro": {
         "score": 757,
@@ -72,15 +72,15 @@
         "losses": 3
     },
     "kelvim": {
-        "score": 655.8529398148148,
-        "popularity": 0.85,
+        "score": 643.8529398148148,
+        "popularity": 0.82,
         "wins": 0,
-        "losses": 5
+        "losses": 6
     },
     "nathancmiguel": {
-        "score": 1046,
-        "popularity": 1.22,
-        "wins": 5,
+        "score": 1059,
+        "popularity": 1.27,
+        "wins": 6,
         "losses": 1
     }
 }

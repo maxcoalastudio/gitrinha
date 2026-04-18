@@ -275,7 +275,7 @@ body::before {
     text-align: center;
 }
 
-.titulo2 {
+.titulo2 h2{
     color: #ffd700;
     font-size: 25px;
     margin-bottom: 10px;
