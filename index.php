@@ -12,7 +12,6 @@ require_once('public/PHJSP/PARSE.phjsp');
 <body id="body">
     <h1 id="titulo">⚔️ GitRinha ⚔️</h1>
     
-    
     <div class="main-container">
         <!-- Ranking TOP 10 -->
         <div class="ranking-panel">
@@ -21,9 +20,10 @@ require_once('public/PHJSP/PARSE.phjsp');
                 <p>Carregando ranking...</p>
             </div>
         </div>
+        
         <!-- Battle Area COM VS NO MEIO -->
         <div id="battle-area" class="battle-area" style="display: none;">
-            <h2 id="titulo2">🔥Escolha seu guerreiro!</h2>
+            <h2>🔥 Escolha seu guerreiro! 🔥</h2>
             <div class="battle-cards">
                 <div id="card1" class="battle-card-container"></div>
                 <div class="vs-divider">VS</div>

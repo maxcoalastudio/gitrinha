@@ -270,15 +270,15 @@ body::before {
 /* BATTLE AREA - COM VS NO MEIO */
 /* ============================================ */
 .battle-area {
-    margin-left: 100px;
+    margin-left: 50px;
     margin-right: 360px;
     text-align: center;
 }
 
-.titulo2 h2{
+.battle-area h2 {
     color: #ffd700;
-    font-size: 25px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 30px;
     text-shadow: 0 0 10px rgba(255,215,0,0.5);
     letter-spacing: 2px;
     animation: battleTextPulse 2s ease-in-out infinite;
@@ -294,7 +294,7 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 40px;
     flex-wrap: nowrap;
 }
 
