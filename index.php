@@ -7,20 +7,30 @@ require_once('public/PHJSP/PARSE.phjsp');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitRinha - Batalha de Devs</title>
-    <link href="/CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="public/CSS/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="body">
     <h1 id="titulo">⚔️ GitRinha ⚔️</h1>
     
+    
     <div class="main-container">
-    <!-- LADO ESQUERDO - RANKING E CONCORRENTES -->
-    <div class="left-panel">
         <!-- Ranking TOP 10 -->
         <div class="ranking-panel">
             <h3>🏆 TOP 10 Ranking 🏆</h3>
             <div id="ranking-list" class="ranking-list">
                 <p>Carregando ranking...</p>
             </div>
+        </div>
+        <!-- Battle Area COM VS NO MEIO -->
+        <div id="battle-area" class="battle-area" style="display: none;">
+            <h2 id="titulo2">🔥Escolha seu guerreiro!</h2>
+            <div class="battle-cards">
+                <div id="card1" class="battle-card-container"></div>
+                <div class="vs-divider">VS</div>
+                <div id="card2" class="battle-card-container"></div>
+            </div>
+            <div id="battle-result"></div>
+            <div id="game-messages"></div>
         </div>
         
         <!-- Concorrentes -->
@@ -31,19 +41,6 @@ require_once('public/PHJSP/PARSE.phjsp');
             </div>
         </div>
     </div>
-    
-    <!-- CENTRO - CARDS COM VS -->
-    <div class="battle-area">
-        <h2>🔥 Escolha seu guerreiro! 🔥</h2>
-        <div class="battle-container">
-            <div id="card1" class="battle-card-container"></div>
-            <div class="vs-divider">VS</div>
-            <div id="card2" class="battle-card-container"></div>
-        </div>
-        <div id="battle-result"></div>
-        <div id="game-messages"></div>
-    </div>
-</div>
     
     <!-- Waiting Message -->
     <div id="waiting-message" class="waiting-container" style="display: flex;">
@@ -126,14 +123,6 @@ require_once('public/PHJSP/PARSE.phjsp');
     require_once('public/PHJSP/scripts.php');
     require_once('public/PHJSP/game.phjsp');
     ?>
-
-    <div class="music-player">
-    <audio id="bgm" loop autoplay>
-        <source src="public/music/battle-theme.wav" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-    </audio>
-    <button id="musicToggle" class="music-toggle">🔊</button>
-    </div>
     
     <script>
     // Funções do Modal PIX
@@ -161,36 +150,6 @@ require_once('public/PHJSP/PARSE.phjsp');
             closePixModal();
         }
     }
-    // Controle de música
-const bgm = document.getElementById('bgm');
-const toggleBtn = document.getElementById('musicToggle');
-
-// Tentar tocar automaticamente (navegadores podem bloquear)
-document.addEventListener('click', function initAudio() {
-    bgm.play().catch(e => console.log('Autoplay bloqueado'));
-    document.removeEventListener('click', initAudio);
-}, { once: true });
-
-// Toggle play/pause
-toggleBtn.addEventListener('click', function() {
-    if (bgm.paused) {
-        bgm.play();
-        toggleBtn.textContent = '🔊';
-    } else {
-        bgm.pause();
-        toggleBtn.textContent = '🔇';
-    }
-});
-
-// Salvar preferência no localStorage
-bgm.addEventListener('play', () => localStorage.setItem('bgmPlaying', 'true'));
-bgm.addEventListener('pause', () => localStorage.setItem('bgmPlaying', 'false'));
-
-// Restaurar estado
-if (localStorage.getItem('bgmPlaying') === 'false') {
-    bgm.pause();
-    toggleBtn.textContent = '🔇';
-}
     </script>
 </body>
 </html>

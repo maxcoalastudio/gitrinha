@@ -1,86 +1,86 @@
 {
     "UnidayStudio": {
         "score": 970,
-        "popularity": 1.02,
-        "wins": 7,
-        "losses": 11
+        "popularity": 1.04,
+        "wins": 8,
+        "losses": 12
     },
     "Cesio137": {
-        "score": 721.9970929783951,
-        "popularity": 1.05,
-        "wins": 1,
+        "score": 732.9970929783951,
+        "popularity": 1.1,
+        "wins": 2,
         "losses": 0
     },
     "maxcoalastudio": {
-        "score": 723,
-        "popularity": 1.05,
-        "wins": 1,
+        "score": 758,
+        "popularity": 1.2,
+        "wins": 4,
         "losses": 0
     },
     "joelgomes1994": {
-        "score": 731,
-        "popularity": 1.25,
-        "wins": 5,
+        "score": 744,
+        "popularity": 1.3,
+        "wins": 6,
         "losses": 0
     },
     "lucasmontano": {
-        "score": 10279,
+        "score": 10280,
+        "popularity": 1.06,
+        "wins": 3,
+        "losses": 3
+    },
+    "filipedeschamps": {
+        "score": 40408,
+        "popularity": 0.76,
+        "wins": 0,
+        "losses": 8
+    },
+    "akitaonrails": {
+        "score": 16659,
+        "popularity": 0.97,
+        "wins": 3,
+        "losses": 6
+    },
+    "deyvin": {
+        "score": 2401,
+        "popularity": 0.98,
+        "wins": 2,
+        "losses": 4
+    },
+    "cristianoAbudu": {
+        "score": 1888,
+        "popularity": 0.85,
+        "wins": 0,
+        "losses": 5
+    },
+    "Rafael-Fagiani": {
+        "score": 612,
         "popularity": 1.04,
         "wins": 2,
         "losses": 2
     },
-    "filipedeschamps": {
-        "score": 40491,
-        "popularity": 0.97,
-        "wins": 0,
-        "losses": 1
-    },
-    "akitaonrails": {
-        "score": 16678,
-        "popularity": 1.01,
-        "wins": 2,
-        "losses": 3
-    },
-    "deyvin": {
-        "score": 2411,
-        "popularity": 1.01,
-        "wins": 2,
-        "losses": 3
-    },
-    "cristianoAbudu": {
-        "score": 1900,
-        "popularity": 0.88,
-        "wins": 0,
-        "losses": 4
-    },
-    "Rafael-Fagiani": {
-        "score": 612,
-        "popularity": 1.02,
-        "wins": 1,
-        "losses": 1
-    },
     "Bernardo-Ribeiro": {
-        "score": 765,
-        "popularity": 1.25,
+        "score": 757,
+        "popularity": 1.22,
         "wins": 5,
-        "losses": 0
+        "losses": 1
     },
     "FabianaCampanari": {
-        "score": 1746,
-        "popularity": 1.01,
-        "wins": 2,
+        "score": 1818,
+        "popularity": 1.31,
+        "wins": 8,
         "losses": 3
     },
     "kelvim": {
-        "score": 678.8529398148148,
-        "popularity": 0.91,
+        "score": 655.8529398148148,
+        "popularity": 0.85,
         "wins": 0,
-        "losses": 3
+        "losses": 5
     },
     "nathancmiguel": {
-        "score": 1011,
-        "popularity": 1.07,
-        "wins": 2,
+        "score": 1046,
+        "popularity": 1.22,
+        "wins": 5,
         "losses": 1
     }
 }
