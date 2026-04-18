@@ -128,5 +128,27 @@
         "location": "Brazil \ud83c\udde7\ud83c\uddf7",
         "created_at": "2022-09-10T00:17:08Z",
         "added_at": "2026-04-16 23:26:47"
+    },
+    {
+        "login": "Cesio137",
+        "name": "Cesio137",
+        "avatar_url": "https:\/\/github.com\/Cesio137.png",
+        "bio": "Desenvolvedor",
+        "public_repos": 10,
+        "followers": 100,
+        "location": "GitHub",
+        "created_at": "2025-04-17",
+        "added_at": "2026-04-17 23:34:53"
+    },
+    {
+        "login": "kelvim",
+        "name": "kelvim",
+        "avatar_url": "https:\/\/github.com\/kelvim.png",
+        "bio": "Desenvolvedor GitHub",
+        "public_repos": 10,
+        "followers": 100,
+        "location": "GitHub",
+        "created_at": "2025-04-18",
+        "added_at": "2026-04-18 02:49:24"
     }
 ]

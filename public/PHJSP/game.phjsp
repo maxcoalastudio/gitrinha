@@ -1,5 +1,5 @@
 <?php
-// game.phjsp - Lógica do jogo com reload da página
+// game.phjsp - Lógica do jogo com verificações
 
 $game = new PHJSP();
 
@@ -13,26 +13,26 @@ $game->function('loadRanking', [], '
                 window.allRanking = data.ranking;
                 displayranking(data.ranking);
                 
+                // VERIFICAR SE OS ELEMENTOS EXISTEM ANTES DE ACESSAR
+                var battleArea = document.getElementById("battle-area");
+                var waitingMessage = document.getElementById("waiting-message");
+                
                 if (data.total >= 2) {
-                    document.getElementById("battle-area").style.display = "block";
-                    document.getElementById("waiting-message").style.display = "none";
+                    if (battleArea) battleArea.style.display = "flex";
+                    if (waitingMessage) waitingMessage.style.display = "none";
                     if (!window.currentBattle) {
                         startnewbattle(data.ranking);
                     }
                 } else {
-                    document.getElementById("battle-area").style.display = "none";
-                    document.getElementById("waiting-message").style.display = "flex";
+                    if (battleArea) battleArea.style.display = "none";
+                    if (waitingMessage) waitingMessage.style.display = "flex";
                     var needed = 2 - data.total;
                     var waitingCard = document.querySelector("#waiting-message .waiting-card");
                     if (waitingCard) {
-                        waitingCard.innerHTML = `
-                            <h2>⚔️ Aguardando Guerreiros ⚔️</h2>
-                            <p>Adicione mais ${needed} guerreiro(s) para começar as batalhas!</p>
-                            <p>Total atual: ${data.total}/2</p>
-                            <div class="waiting-progress">
-                                <div class="progress-bar" style="width: ${(data.total/2)*100}%"></div>
-                            </div>
-                        `;
+                        waitingCard.innerHTML = "<h2>⚔️ Aguardando Guerreiros ⚔️</h2>" +
+                            "<p>Adicione mais " + needed + " guerreiro(s) para começar as batalhas!</p>" +
+                            "<p>Total atual: " + data.total + "/2</p>" +
+                            "<div class=\"waiting-progress\"><div class=\"progress-bar\" style=\"width: " + (data.total/2)*100 + "%\"></div></div>";
                     }
                 }
             }
@@ -40,49 +40,40 @@ $game->function('loadRanking', [], '
         .catch(error => console.error("Erro:", error));
 ');
 
-
 $game->function('addCardClickEffect', [], '
     function addCardClickEffect() {
         var cards = document.querySelectorAll(".card");
-        cards.forEach(function(card) {
-            card.addEventListener("click", function(e) {
-                // Não disparar se clicou no botão
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].addEventListener("click", function(e) {
                 if (e.target.tagName === "BUTTON") return;
-                
                 this.style.transform = "scale(0.98)";
                 setTimeout(function() {
-                    card.style.transform = "";
-                }, 150);
+                    this.style.transform = "";
+                }.bind(this), 150);
             });
-        });
+        }
     }
     
-    // Chamar a função quando o DOM carregar
     document.addEventListener("DOMContentLoaded", addCardClickEffect);
     
-    // Observar mudanças na DOM para adicionar efeito em novos cards
     var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.addedNodes.length) {
-                addCardClickEffect();
-            }
-        });
+        addCardClickEffect();
     });
-    
     observer.observe(document.body, { childList: true, subtree: true });
 ');
 
-
 $game->function('displayranking', ['ranking'], '
     var rankingDiv = document.getElementById("ranking-list");
-    if (!rankingDiv) return;
+    if (!rankingDiv) {
+        console.error("Elemento ranking-list não encontrado");
+        return;
+    }
     
     if (!ranking || ranking.length === 0) {
         rankingDiv.innerHTML = "<p>Nenhum guerreiro ainda</p>";
         return;
     }
     
-    // Garantir que não há duplicatas no ranking
     var uniqueRanking = [];
     var logins = [];
     for (var i = 0; i < ranking.length; i++) {
@@ -97,25 +88,24 @@ $game->function('displayranking', ['ranking'], '
         var user = uniqueRanking[i];
         var medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : "#" + (i + 1);
         var winRate = user.win_rate || 0;
+        var avatarUrl = "https://github.com/" + user.login + ".png";
         
-        html += `
-            <div class="ranking-item ${i === 0 ? "first-place" : ""}">
-                <span class="rank-medal">${medal}</span>
-                <img src="${user.avatar_url}" class="rank-avatar" onerror="this.src=\'https://github.com/${user.login}.png\'">
-                <div class="rank-info">
-                    <div class="rank-name">${escapeHtml(user.name)}</div>
-                    <div class="rank-stats">
-                        <span>⭐ ${user.score} pts</span>
-                        <span>🏆 ${user.wins}W</span>
-                        <span>📊 ${winRate}%</span>
-                    </div>
-                </div>
-            </div>
-        `;
+        html += "<div class=\"ranking-item " + (i === 0 ? "first-place" : "") + "\">" +
+            "<span class=\"rank-medal\">" + medal + "</span>" +
+            "<img src=\"" + avatarUrl + "\" class=\"rank-avatar\" onerror=\"this.src=\'https://github.com/" + user.login + ".png\'\">" +
+            "<div class=\"rank-info\">" +
+                "<div class=\"rank-name\">" + escapeHtml(user.name) + "</div>" +
+                "<div class=\"rank-stats\">" +
+                    "<span>⭐ " + user.score + " pts</span>" +
+                    "<span>🏆 " + user.wins + "W</span>" +
+                    "<span>📊 " + winRate + "%</span>" +
+                "</div>" +
+            "</div>" +
+        "</div>";
     }
     rankingDiv.innerHTML = html;
     
-    // Atualizar lista de concorrentes
+    // CONCORRENTES
     var concorrentesDiv = document.getElementById("concorrentes-list");
     if (concorrentesDiv) {
         var concorrentes = uniqueRanking.slice(10);
@@ -125,19 +115,18 @@ $game->function('displayranking', ['ranking'], '
             var concHtml = "";
             for (var i = 0; i < concorrentes.length; i++) {
                 var user = concorrentes[i];
-                concHtml += `
-                    <div class="concorrente-item">
-                        <span class="concorrente-position">#${i + 11}</span>
-                        <img src="${user.avatar_url}" class="concorrente-avatar" onerror="this.src=\'https://github.com/${user.login}.png\'">
-                        <div class="concorrente-info">
-                            <div class="concorrente-name">${escapeHtml(user.name)}</div>
-                            <div class="concorrente-stats">
-                                <span>⭐ ${user.score}</span>
-                                <span>🏆 ${user.wins}W</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                var avatarUrl = "https://github.com/" + user.login + ".png";
+                concHtml += "<div class=\"concorrente-item\">" +
+                    "<span class=\"concorrente-position\">#" + (i + 11) + "</span>" +
+                    "<img src=\"" + avatarUrl + "\" class=\"concorrente-avatar\" onerror=\"this.src=\'https://github.com/" + user.login + ".png\'\">" +
+                    "<div class=\"concorrente-info\">" +
+                        "<div class=\"concorrente-name\">" + escapeHtml(user.name) + "</div>" +
+                        "<div class=\"concorrente-stats\">" +
+                            "<span>⭐ " + user.score + "</span>" +
+                            "<span>🏆 " + user.wins + "W</span>" +
+                        "</div>" +
+                    "</div>" +
+                "</div>";
             }
             concorrentesDiv.innerHTML = concHtml;
         }
@@ -147,7 +136,6 @@ $game->function('displayranking', ['ranking'], '
 $game->function('startnewbattle', ['ranking'], '
     if (!ranking || ranking.length < 2) return;
     
-    // Garantir que não há duplicatas
     var uniqueRanking = [];
     var logins = [];
     for (var i = 0; i < ranking.length; i++) {
@@ -159,16 +147,13 @@ $game->function('startnewbattle', ['ranking'], '
     
     if (uniqueRanking.length < 2) return;
     
-    // Escolher dois guerreiros DIFERENTES
     var idx1 = Math.floor(Math.random() * uniqueRanking.length);
     var idx2 = Math.floor(Math.random() * uniqueRanking.length);
     
-    // Garantir que são diferentes
     while (idx2 === idx1 && uniqueRanking.length > 1) {
         idx2 = Math.floor(Math.random() * uniqueRanking.length);
     }
     
-    // Garantir que os logins são diferentes
     while (uniqueRanking[idx1].login === uniqueRanking[idx2].login && uniqueRanking.length > 1) {
         idx2 = Math.floor(Math.random() * uniqueRanking.length);
     }
@@ -178,7 +163,6 @@ $game->function('startnewbattle', ['ranking'], '
         warrior2: uniqueRanking[idx2]
     };
     
-    console.log("Nova Batalha:", window.currentBattle.warrior1.name, "vs", window.currentBattle.warrior2.name);
     displaybattle(window.currentBattle.warrior1, window.currentBattle.warrior2);
 ');
 
@@ -194,25 +178,27 @@ $game->function('createcard', ['user'], '
     var createdDate = user.created_at ? new Date(user.created_at).toLocaleDateString("pt-BR") : "Data desconhecida";
     var bio = user.bio && user.bio.length > 0 ? user.bio.substring(0, 100) : "Sem bio disponível";
     var opponent = window.currentBattle && window.currentBattle.warrior1.login === user.login ? window.currentBattle.warrior2.login : window.currentBattle.warrior1.login;
+    var avatarUrl = "https://github.com/" + user.login + ".png";
     
-    return `
-        <div class="card">
-            <img src="${user.avatar_url}" alt="${user.name}" onerror="this.src=\'https://github.com/${user.login}.png\'">
-            <h2>${escapeHtml(user.name)}</h2>
-            <h3>${escapeHtml(bio)}</h3>
-            <p>@${user.login}</p>
-            <p>👥 Followers: ${user.followers || 0}</p>
-            <p>📚 Repos: ${user.public_repos || 0}</p>
-            <p>📍 Location: ${escapeHtml(user.location) || "Não informado"}</p>
-            <p>📅 Criado em: ${createdDate}</p>
-            <p>⭐ Pontuação: ${user.score || 1000}</p>
-            <p>🏆 Vitórias: ${user.wins || 0}</p>
-            <p>📉 Derrotas: ${user.losses || 0}</p>
-            <button class="vote-btn" onclick="votebattle(\'${user.login}\', \'${opponent}\')">
-                🗳️ Escolher ${user.name}
-            </button>
-        </div>
-    `;
+    var html = "";
+    html += "<div class=\"card\">";
+    html += "<img src=\"" + avatarUrl + "\" alt=\"" + user.name + "\" onerror=\"this.src=\'https://github.com/" + user.login + ".png\'\">";
+    html += "<h2>" + escapeHtml(user.name) + "</h2>";
+    html += "<h3>" + escapeHtml(bio) + "</h3>";
+    html += "<p>@" + user.login + "</p>";
+    html += "<p>👥 Followers: " + (user.followers || 0) + "</p>";
+    html += "<p>📚 Repos: " + (user.public_repos || 0) + "</p>";
+    html += "<p>📍 Location: " + (escapeHtml(user.location) || "Não informado") + "</p>";
+    html += "<p>📅 Criado em: " + createdDate + "</p>";
+    html += "<p>⭐ Pontuação: " + (user.score || 1000) + "</p>";
+    html += "<p>🏆 Vitórias: " + (user.wins || 0) + "</p>";
+    html += "<p>📉 Derrotas: " + (user.losses || 0) + "</p>";
+    html += "<button class=\"vote-btn\" onclick=\"votebattle(\'" + user.login + "\', \'" + opponent + "\')\">";
+    html += "🗳️ Escolher " + user.name;
+    html += "</button>";
+    html += "</div>";
+    
+    return html;
 ');
 
 $game->function('votebattle', ['winner', 'loser'], '
@@ -231,8 +217,7 @@ $game->function('votebattle', ['winner', 'loser'], '
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            showmessage("✨ " + data.winner.name + " venceu! Ganhou " + data.battle.points_gained + " pontos! ✨", "success");
-            // RECARREGAR A PÁGINA APÓS O VOTO
+            showmessage("✨ " + data.winner.name + " venceu! ✨", "success");
             setTimeout(function() {
                 location.reload();
             }, 1500);
@@ -264,7 +249,6 @@ $game->function('addnewuser', ['username'], '
         if (data.success) {
             showmessage(data.message || "✨ " + data.user.name + " entrou na rinha! ✨", "success");
             document.getElementById("github-username").value = "";
-            // RECARREGAR A PÁGINA APÓS ADICIONAR USUÁRIO
             setTimeout(function() {
                 location.reload();
             }, 1500);

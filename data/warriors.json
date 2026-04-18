@@ -1,1 +1,132 @@
-[]
+[
+    {
+        "login": "UnidayStudio",
+        "name": "Uniday Studio",
+        "avatar_url": "https:\/\/avatars.githubusercontent.com\/u\/12345678",
+        "bio": "Est\u00fadio de desenvolvimento",
+        "public_repos": 15,
+        "followers": 120,
+        "location": "Brazil",
+        "created_at": "2020-01-01"
+    },
+    {
+        "login": "nathancmiguel",
+        "name": "Cesio",
+        "avatar_url": "https:\/\/avatars.githubusercontent.com\/u\/87654321",
+        "bio": "Full Stack Developer",
+        "public_repos": 42,
+        "followers": 340,
+        "location": "Portugal",
+        "created_at": "2019-05-15"
+    },
+    {
+        "login": "maxcoalastudio",
+        "name": "Maxwell Araujo Santos",
+        "avatar_url": "https:\/\/github.com\/maxcoalastudio.png",
+        "bio": "Formado em Ci\u00eancias da Computa\u00e7\u00e3o e desenvolvedor de jogos.",
+        "public_repos": 21,
+        "followers": 7,
+        "location": "N\u00e3o informado",
+        "created_at": "2018-06-21T03:15:02Z",
+        "added_at": "2026-04-16 21:26:12"
+    },
+    {
+        "login": "joelgomes1994",
+        "name": "Joel Gomes da Silva",
+        "avatar_url": "https:\/\/github.com\/joelgomes1994.png",
+        "bio": "Full stack developer, game developer and musician.",
+        "public_repos": 8,
+        "followers": 32,
+        "location": "S\u00e3o Paulo, Brazil",
+        "created_at": "2016-06-08T14:02:12Z",
+        "added_at": "2026-04-16 21:26:13"
+    },
+    {
+        "login": "lucasmontano",
+        "name": "Lucas Montano",
+        "avatar_url": "https:\/\/github.com\/lucasmontano.png",
+        "bio": "Building great products & creating content",
+        "public_repos": 39,
+        "followers": 9482,
+        "location": "Amsterdam, The Netherlands",
+        "created_at": "2014-05-12T15:08:46Z",
+        "added_at": "2026-04-16 21:26:13"
+    },
+    {
+        "login": "filipedeschamps",
+        "name": "Filipe Deschamps",
+        "avatar_url": "https:\/\/github.com\/filipedeschamps.png",
+        "bio": "Quer se sentir competente em programa\u00e7\u00e3o? Confere isso: https:\/\/curso.dev",
+        "public_repos": 22,
+        "followers": 39791,
+        "location": "Brasil",
+        "created_at": "2013-04-24T17:59:20Z",
+        "added_at": "2026-04-16 21:26:13"
+    },
+    {
+        "login": "cristianoAbudu",
+        "name": "Cristiano",
+        "avatar_url": "https:\/\/github.com\/cristianoAbudu.png",
+        "bio": "Java Sr. Developer",
+        "public_repos": 50,
+        "followers": 1093,
+        "location": "S\u00e3o Paulo - SP \/ Brasil",
+        "created_at": "2016-06-22T14:42:51Z",
+        "added_at": "2026-04-16 21:26:13"
+    },
+    {
+        "login": "deyvin",
+        "name": "Deyvid Nascimento",
+        "avatar_url": "https:\/\/github.com\/deyvin.png",
+        "bio": "backend",
+        "public_repos": 27,
+        "followers": 1686,
+        "location": "Rio de Janeiro",
+        "created_at": "2010-01-15T18:12:10Z",
+        "added_at": "2026-04-16 21:26:14"
+    },
+    {
+        "login": "akitaonrails",
+        "name": "Fabio Akita",
+        "avatar_url": "https:\/\/github.com\/akitaonrails.png",
+        "bio": "Agile Senior Vibe Coder \/\r\nSign up for my newsletter: https:\/\/themakitachronicles.com",
+        "public_repos": 150,
+        "followers": 15339,
+        "location": "Brazil",
+        "created_at": "2008-03-11T17:14:52Z",
+        "added_at": "2026-04-16 21:26:14"
+    },
+    {
+        "login": "Rafael-Fagiani",
+        "name": "Rafael-Fagiani",
+        "avatar_url": "https:\/\/github.com\/Rafael-Fagiani.png",
+        "bio": "Sem bio",
+        "public_repos": 2,
+        "followers": 2,
+        "location": "N\u00e3o informado",
+        "created_at": "2022-11-28T19:25:55Z",
+        "added_at": "2026-04-16 21:26:14"
+    },
+    {
+        "login": "Bernardo-Ribeiro",
+        "name": "Bernardo",
+        "avatar_url": "https:\/\/github.com\/Bernardo-Ribeiro.png",
+        "bio": "Sem bio",
+        "public_repos": 20,
+        "followers": 7,
+        "location": "Santana do Livramento",
+        "created_at": "2024-09-02T18:03:22Z",
+        "added_at": "2026-04-16 21:26:14"
+    },
+    {
+        "login": "FabianaCampanari",
+        "name": "Fabiana  \u26a1\ufe0f Campanari",
+        "avatar_url": "https:\/\/github.com\/FabianaCampanari.png",
+        "bio": "\u00b7\u02d6 \u05b4\u05b6\u05b8 \ud80c\udc83\u02d6\u02f3\u02f3\u00b7\u02d6 \ud83d\udd78\ufe0f    Hello Model !  \u00b7\u02d6 \u05b4\u05b6\u05b8 \u02d6\ud80c\udc83\u02d6\u02f3\u00b7\u02d6 \u05b4\u05b6\u05b8 \r\n\u02d6\u02f3\u02d6\u02d6\u02f3\u02f3\u00b7\u02d6 \u05b4\u05b6\u05b8 \ud80c\udc83\u02d6\u02f3\u02f3\ud80c\udc83\u00b7 \u02d6\u02f3 \ud835\udebf   Hey Dataset ! \u00b7\u02d6 \u05b4\u05b6\u05b8 \u02d6\ud80c\udc83\r\n\u02d6\u02d6\u02f3\u00b7\u02d6 \u02f3\u00b7\u02d6 \u05b4\u05b6\u05b8 \ud80c\udc83\u02d6\u02f3\u02f3\u00b7\u02d6 \u02d6\u02f3\u00b7\u02d6 \ud83c\uddf6 Yo, Gradient ",
+        "public_repos": 101,
+        "followers": 652,
+        "location": "Brazil \ud83c\udde7\ud83c\uddf7",
+        "created_at": "2022-09-10T00:17:08Z",
+        "added_at": "2026-04-16 23:26:47"
+    }
+]
